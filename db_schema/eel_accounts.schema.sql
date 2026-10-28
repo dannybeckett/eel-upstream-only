@@ -2819,8 +2819,8 @@ CREATE TABLE `hmrc_obligation_evidence_links` (
   CONSTRAINT `chk_hmrc_evidence_one_source` CHECK ((`transaction_id` is not null and `expense_claim_line_id` is null) or (`transaction_id` is null and `expense_claim_line_id` is not null)),
   CONSTRAINT `chk_hmrc_evidence_positive_amount` CHECK (`allocated_amount` > 0),
   CONSTRAINT `fk_hmrc_evidence_obligation` FOREIGN KEY (`hmrc_obligation_id`) REFERENCES `hmrc_obligations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_hmrc_evidence_transaction` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_hmrc_evidence_expense` FOREIGN KEY (`expense_claim_line_id`) REFERENCES `expense_claim_lines` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `fk_hmrc_evidence_transaction` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON UPDATE RESTRICT,
+  CONSTRAINT `fk_hmrc_evidence_expense` FOREIGN KEY (`expense_claim_line_id`) REFERENCES `expense_claim_lines` (`id`) ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
