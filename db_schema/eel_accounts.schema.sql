@@ -4872,6 +4872,16 @@ WHERE `card_key` = 'filing_evidence_calculations';
 INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
   ('2026_08_09_001_registered_charitable_donations.sql'),
   ('2026_08_09_002_filing_evidence_charitable_donations_card.sql');
+INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
+  ('2026_07_18_001_year_end_company_cascade.sql');
+INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
+  ('2026_07_20_014_derive_shareholder_status.sql');
+INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
+  ('2026_07_20_015_participator_loan_party_cutover.sql');
+INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
+  ('2026_07_22_001_journal_director_loan_offset_source_type.sql');
+INSERT IGNORE INTO `schema_migrations` (`migration`) VALUES
+  ('2026_07_26_001_ixbrl_frs105_taxonomy_profile.sql');
 
 DROP TRIGGER IF EXISTS `trg_journals_append_only_update`;
 CREATE TRIGGER `trg_journals_append_only_update`
