@@ -3231,7 +3231,7 @@ CREATE TABLE `asset_depreciation_adjustments` (
   CONSTRAINT `fk_asset_depreciation_adjustment_asset` FOREIGN KEY (`asset_id`) REFERENCES `asset_register` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_asset_depreciation_adjustment_period` FOREIGN KEY (`accounting_period_id`) REFERENCES `accounting_periods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_asset_depreciation_adjustment_journal` FOREIGN KEY (`journal_id`) REFERENCES `journals` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `chk_asset_depreciation_adjustment_amount` CHECK (`amount <> 0)
+  CONSTRAINT `chk_asset_depreciation_adjustment_amount` CHECK (`amount` <> 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
